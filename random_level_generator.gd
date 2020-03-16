@@ -13,7 +13,7 @@ func generate_random_roof(position: Vector2) -> Roof:
 	var height = randf() * 100.0
 	return generate_new_roof(Vector2(position.x, position.y + height))
 
-var last_generated = 0.0
+var last_generated = -1000.0
 
 func generate_random_doctor(position: Vector2) -> PlagueDoctor:
 	var doctor = preload("res://Enemies/PlagueDoctor/PlagueDoctor.tscn").instance()

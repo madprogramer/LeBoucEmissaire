@@ -31,7 +31,7 @@ var dy := 0.0
 const DXLIM = 0.5
 const GRIND = 0.01
 const JUMP_LIMIT = 2.0
-const FALL_LIMIT = 1.5
+const FALL_LIMIT = 1000000.0
 const GRAVITY = 0.015
 const JUMP_BOOST = 1.2
 const FALL_BOOST = 0.8
@@ -40,7 +40,7 @@ var head_bodies := 0
 var toe_bodies := 0
 
 const MULTX := 300.0
-const MULTY := 400.0
+const MULTY := 600.0
 
 func head_colliding() -> bool:
 	return head_bodies != 0
@@ -104,7 +104,7 @@ func move_closer() -> void:
 			dy = -JUMP_BOOST
 	
 	else:
-		dy += GRAVITY
+		dy = 100 * FALL_BOOST
 		dx = 0.0
 	
 	dy = clamp(dy, -JUMP_LIMIT, FALL_LIMIT)
@@ -123,9 +123,10 @@ func _ready():
 		"move_closer": get_node("States/PlagueDoctorMoveCloserState")
 	}
 	
-	init_state = "move_closer"
+	init_state = "idle"
 	
 	._ready()
 	
 	variables["speed"] = 1.0
 	get_node("EnemyStateMachine").update_variable("move_closer_range", 50.0)
+	get_node("EnemyStateMachine").update_variable("see_range", 300.0)
