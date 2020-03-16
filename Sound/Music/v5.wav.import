@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/v5.wav-98cdd56be79e0530bced632e565fe1d5.sample"
+valid=false
 
 [deps]
 
 source_file="res://Sound/Music/v5.wav"
-dest_files=[ "res://.import/v5.wav-98cdd56be79e0530bced632e565fe1d5.sample" ]
-
 [params]
 
 force/8_bit=false

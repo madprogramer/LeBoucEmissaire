@@ -2,13 +2,11 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/theme-ultra-slow.ogg-7751634317cd11774763e049216bbb91.oggstr"
+valid=false
 
 [deps]
 
 source_file="res://Sound/theme-ultra-slow.ogg"
-dest_files=[ "res://.import/theme-ultra-slow.ogg-7751634317cd11774763e049216bbb91.oggstr" ]
-
 [params]
 
 loop=true
