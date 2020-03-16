@@ -52,16 +52,17 @@ var dy := 0.0
 
 const DXLIM = 0.5
 const GRIND = 0.01
-const JUMP_LIMIT = 1.2
-const FALL_LIMIT = 1.0
-const GRAVITY = 0.002
-const JUMP_BOOST = 0.5
-const FALL_BOOST = 0.5
+const JUMP_LIMIT = 2.0
+const FALL_LIMIT = 1.5
+const GRAVITY = 0.02
+const JUMP_BOOST = 1.2
+const FALL_BOOST = 0.8
 
 var head_bodies := 0
 var toe_bodies := 0
 
-const MULT := 600.0
+const MULTX := 600.0
+const MULTY := 500.0
 
 func head_colliding() -> bool:
 	return head_bodies != 0
@@ -116,7 +117,7 @@ func _process(delta):
 	elif dx > 0.0:
 		change_direction("right")
 	
-	move_and_collide(Vector2(dx * delta * MULT, dy * delta * MULT))
+	move_and_collide(Vector2(dx * delta * MULTX, dy * delta * MULTY))
 
 
 func _on_Head_body_entered(body):
