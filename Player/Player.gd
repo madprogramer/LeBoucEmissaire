@@ -70,6 +70,8 @@ func head_colliding() -> bool:
 func toes_colliding() -> bool:
 	return toe_bodies != 0
 
+signal game_over
+
 func _physics_process(delta):	
 	var move_vec = get_move_vec()
 	if move_vec.x > 0.0:
@@ -145,7 +147,6 @@ func _on_Toes_body_exited(body):
 	if body.name != "Player":
 		toe_bodies -= 1
 
-signal game_over
 
 func _on_Area2D_body_entered(body):
 	if "PlagueDoctor" in body.name:
