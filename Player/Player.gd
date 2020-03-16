@@ -54,7 +54,7 @@ const DXLIM = 0.5
 const GRIND = 0.01
 const JUMP_LIMIT = 2.0
 const FALL_LIMIT = 1.5
-const GRAVITY = 0.02
+const GRAVITY = 0.01
 const JUMP_BOOST = 1.2
 const FALL_BOOST = 0.8
 
@@ -62,7 +62,7 @@ var head_bodies := 0
 var toe_bodies := 0
 
 const MULTX := 600.0
-const MULTY := 500.0
+const MULTY := 600.0
 
 func head_colliding() -> bool:
 	return head_bodies != 0
@@ -88,6 +88,8 @@ func _process(delta):
 	
 	var is_head_colliding: bool = head_colliding()
 	var is_toes_colliding: bool = toes_colliding()
+	
+#	print(is_head_colliding, " ", is_toes_colliding)
 	
 	if is_head_colliding:
 		dy = FALL_BOOST
@@ -121,20 +123,20 @@ func _process(delta):
 
 
 func _on_Head_body_entered(body):
-	if typeof(body) == 17 or not body is KinematicBody2D:
+	if body.name != "Player":
 		head_bodies += 1
 
 
 func _on_Head_body_exited(body):
-	if typeof(body) == 17 or  not body is KinematicBody2D:
+	if body.name != "Player":
 		head_bodies -= 1
 
 
 func _on_Toes_body_entered(body):
-	if typeof(body) != 17 or not body is KinematicBody2D:
+	if body.name != "Player":
 		toe_bodies += 1
 
 
 func _on_Toes_body_exited(body):
-	if typeof(body) != 17 or not body is KinematicBody2D:
+	if body.name != "Player":
 		toe_bodies -= 1

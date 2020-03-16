@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Enemies/DummyEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/PlagueDoctor/States/idle_state.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Assets/PlagueDoctorRun/frame0005.png" type="Texture" id=9]
 [ext_resource path="res://Assets/PlagueDoctorRun/frame0001.png" type="Texture" id=10]
 [ext_resource path="res://Assets/PlagueDoctorRun/frame0000.png" type="Texture" id=11]
+[ext_resource path="res://Toes/Toes.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Head/Head.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -39,9 +41,21 @@ script = ExtResource( 4 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "moving"
+frame = 1
 playing = true
 offset = Vector2( 170, 50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 position = Vector2( -0.926575, -0.926582 )
 shape = SubResource( 2 )
+
+[node name="Head" parent="." index="4" instance=ExtResource( 13 )]
+position = Vector2( -1, -30 )
+scale = Vector2( 0.3, 1 )
+
+[node name="Toes" parent="." index="5" instance=ExtResource( 12 )]
+position = Vector2( -1, 28.25 )
+scale = Vector2( 0.3, 1 )
+[connection signal="body_entered" from="Head" to="." method="_on_Head_body_entered"]
+[connection signal="body_entered" from="Toes" to="." method="_on_Toes_body_entered"]
+[connection signal="body_exited" from="Toes" to="." method="_on_Toes_body_exited"]
