@@ -50,12 +50,13 @@ func get_move_vec() -> Vector2:
 var dx := 0.0
 var dy := 0.0
 
+const DXLIM = 0.5
 const GRIND = 0.01
-const JUMP_LIMIT = 30.0
-const FALL_LIMIT = 30.0
-const GRAVITY = 0.01
-const JUMP_BOOST = 2.0
-const FALL_BOOST = 1.0
+const JUMP_LIMIT = 1.2
+const FALL_LIMIT = 1.0
+const GRAVITY = 0.002
+const JUMP_BOOST = 0.5
+const FALL_BOOST = 0.5
 
 var head_bodies := 0
 var toe_bodies := 0
@@ -73,7 +74,7 @@ func _process(delta):
 	elif move_vec.x < 0.0:
 		dx -= 0.2
 	
-	dx = clamp(dx, -1.0, 1.0)
+	dx = clamp(dx, -DXLIM, DXLIM)
 	
 	if dx >= GRIND:
 		dx -= GRIND

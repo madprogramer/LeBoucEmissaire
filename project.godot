@@ -60,6 +60,16 @@ _global_script_classes=[ {
 "path": "res://Player/Player.gd"
 }, {
 "base": "Node",
+"class": "RandomLevelGenerator",
+"language": "GDScript",
+"path": "res://random_level_generator.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Roof",
+"language": "GDScript",
+"path": "res://Roof/Roof.gd"
+}, {
+"base": "Node",
 "class": "State",
 "language": "GDScript",
 "path": "res://StateMachine/state.gd"
@@ -80,6 +90,8 @@ _global_script_class_icons={
 "Enemy1MoveCloserState": "",
 "EnemyStateMachine": "",
 "Player": "",
+"RandomLevelGenerator": "",
+"Roof": "",
 "State": "",
 "StateMachine": ""
 }
@@ -87,7 +99,6 @@ _global_script_class_icons={
 [application]
 
 config/name="LeBoucEmissaire"
-run/main_scene="res://Test/TestArea.tscn"
 config/icon="res://icon.png"
 
 [input]

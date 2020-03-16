@@ -1,15 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Roof2/Çatı1.PNG" type="Texture" id=1]
+[ext_resource path="res://Assets/Roof3/quarantinejam/Layer 21/Layer 29(pasted).PNG" type="Texture" id=1]
+[ext_resource path="res://Roof/Roof1.gd" type="Script" id=2]
 
-[node name="Roof" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 244.009, 139.311 )
+
+[node name="Roof1" type="StaticBody2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-offset = Vector2( 150, 320 )
+offset = Vector2( -75, 307 )
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 112.394, 15.2071, 188.997, 14.8298, 190.129, 4.64122, 215.909, 4.7613, 214.549, 303.183, 3.37814, 303.183, 4.47124, 4.26386, 28.2445, 4.26386, 29.7539, 15.5845 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 216.413, 6.77533, 237.19, 6.66584, 237.14, 12.4656, 701.716, 12.4554, 700.713, 6.02276, 714.105, 5.48219, 715, 301.063, 226, 304.063 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 244.927, 141.205 )
+shape = SubResource( 1 )

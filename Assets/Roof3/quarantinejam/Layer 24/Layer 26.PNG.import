@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Çatı3.PNG-0af04fc33d446339c1cc1f86f25acff0.stex"
+path="res://.import/Layer 26.PNG-7e9a2b14dcfd47d7ac469431d8527ac0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Roof2/Çatı3.PNG"
-dest_files=[ "res://.import/Çatı3.PNG-0af04fc33d446339c1cc1f86f25acff0.stex" ]
+source_file="res://Assets/Roof3/quarantinejam/Layer 24/Layer 26.PNG"
+dest_files=[ "res://.import/Layer 26.PNG-7e9a2b14dcfd47d7ac469431d8527ac0.stex" ]
 
 [params]
 

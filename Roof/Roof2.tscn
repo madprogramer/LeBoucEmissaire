@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Roof3/quarantinejam/Layer 21/Çatı1.PNG" type="Texture" id=1]
+[ext_resource path="res://Roof/Roof2.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 99.7733, 142.566 )
+
+[node name="Roof2" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 145, 304 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 102.566, 143.291 )
+shape = SubResource( 1 )
