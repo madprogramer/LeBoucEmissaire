@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/theme-ultra-slow.ogg-f074cf8f7a29330c98b4dba62b172655.oggstr"
+
+[deps]
+
+source_file="res://Sound/Music/theme-ultra-slow.ogg"
+dest_files=[ "res://.import/theme-ultra-slow.ogg-f074cf8f7a29330c98b4dba62b172655.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
