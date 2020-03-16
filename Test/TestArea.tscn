@@ -40,18 +40,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreLabel" type="Label" parent="HUD/menu_button"]
-margin_left = 886.228
-margin_top = -1.2278
-margin_right = 986.23
-margin_bottom = 73.7722
+[node name="ScoreLabel" type="Label" parent="HUD"]
+margin_left = 901.228
+margin_top = 13.7722
+margin_right = 1001.23
+margin_bottom = 88.7722
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="in_game_menu" type="Panel" parent="HUD/menu_button"]
-margin_left = 281.0
-margin_top = 51.0
-margin_right = 688.0
-margin_bottom = 473.0
+[node name="in_game_menu" type="Panel" parent="HUD"]
+margin_left = 296.0
+margin_top = 66.0
+margin_right = 703.0
+margin_bottom = 488.0
