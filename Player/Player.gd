@@ -51,11 +51,11 @@ var dx := 0.0
 var dy := 0.0
 
 const DXLIM = 0.5
-const GRIND = 0.01
+const GRIND = 0.1
 const JUMP_LIMIT = 2.0
 const FALL_LIMIT = 1.5
-const GRAVITY = 0.01
-const JUMP_BOOST = 1.2
+const GRAVITY = 0.05
+const JUMP_BOOST = 0.8
 const FALL_BOOST = 0.8
 
 var head_bodies := 0

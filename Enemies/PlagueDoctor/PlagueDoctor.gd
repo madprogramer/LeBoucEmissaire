@@ -105,6 +105,7 @@ func move_closer() -> void:
 	
 	else:
 		dy += GRAVITY
+		dx = 0.0
 	
 	dy = clamp(dy, -JUMP_LIMIT, FALL_LIMIT)
 	
