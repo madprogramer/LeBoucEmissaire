@@ -2,12 +2,23 @@ extends CanvasLayer
 var time_start
 var time_now
 var time
+var player
+
 var ispause = 1
 signal start_game
 var score_all = 0
 
+var start = -31.0
+var furthest = -31.0
+
 func update_score(score):
-	$ScoreLabel.text = str(score)
+	#if player!=null: 
+	#	print(player)
+	
+	#print(get_node("..").get_node("Player").position)
+	
+	furthest = max(furthest, get_node("..").get_node("Player").position.x)
+	$ScoreLabel.text = str(floor(furthest))
 
 func menuon():
 	score_all += time*10
@@ -24,13 +35,17 @@ func _ready():
 	time_start = OS.get_unix_time()
 	set_process(true)
 	
-	var menuon = find_node("menuon")
-	menuon = menuon.connect("pressed",self ,"menuon")
 	
-	var menuoff = find_node("menuoff")
-	menuoff = menuoff.connect("pressed",self ,"menuoff")
+	#print(get_node("..").get_node("Player"))
+	#var player = get_node("..").get_node("Player");
 	
-	$in_game_menu.hide();
+	#var menuon = find_node("menuon")
+	#menuon = menuon.connect("pressed",self ,"menuon")
+	
+	#var menuoff = find_node("menuoff")
+	#menuoff = menuoff.connect("pressed",self ,"menuoff")
+	
+	#$in_game_menu.hide();
 	
 # warning-ignore:unused_argument
 func _process(delta):
