@@ -26,10 +26,19 @@ func set_player(player: Player) -> void:
 	get_node("EnemyStateMachine").update_variable("player", player)
 
 func move_closer() -> void:
-	print_debug("move_closer")
+	if variables.has("player") == false:
+		return
+	
+	var player = variables["player"]
+	
+	var aim_vec = player.global_position - global_position
+	aim_vec.y = 0
+	aim_vec = aim_vec.normalized()
+	
+	move_and_collide(aim_vec * variables["speed"])
 
 func attack(attack_type: String) -> void:
-	print_debug(attack_type)
+	pass
 
 func _process(delta):
 	if get_node("EnemyStateMachine").is_active():

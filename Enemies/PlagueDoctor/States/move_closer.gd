@@ -1,0 +1,3 @@
+extends DummyMoveCloserState
+
+class_name PlagueDoctorMoveCloserState

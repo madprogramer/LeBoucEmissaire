@@ -54,10 +54,40 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://StateMachine/enemy_state_machine.gd"
 }, {
+"base": "DummyEnemy",
+"class": "PlagueDoctor",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/PlagueDoctor.gd"
+}, {
+"base": "DummyAttackState",
+"class": "PlagueDoctorAttackState",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/States/attack.gd"
+}, {
+"base": "DummyIdleState",
+"class": "PlagueDoctorIdleState",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/States/idle_state.gd"
+}, {
+"base": "DummyMoveCloserState",
+"class": "PlagueDoctorMoveCloserState",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/States/move_closer.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Node",
+"class": "RandomLevelGenerator",
+"language": "GDScript",
+"path": "res://random_level_generator.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Roof",
+"language": "GDScript",
+"path": "res://Roof/Roof.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -79,7 +109,13 @@ _global_script_class_icons={
 "Enemy1IdleState": "",
 "Enemy1MoveCloserState": "",
 "EnemyStateMachine": "",
+"PlagueDoctor": "",
+"PlagueDoctorAttackState": "",
+"PlagueDoctorIdleState": "",
+"PlagueDoctorMoveCloserState": "",
 "Player": "",
+"RandomLevelGenerator": "",
+"Roof": "",
 "State": "",
 "StateMachine": ""
 }
@@ -87,8 +123,30 @@ _global_script_class_icons={
 [application]
 
 config/name="LeBoucEmissaire"
-run/main_scene="res://Test/TestArea.tscn"
 config/icon="res://icon.png"
+
+[input]
+
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 
