@@ -41,3 +41,4 @@ func _ready():
 	get_node("EnemyStateMachine").connect("move_closer", self, "move_closer")
 	get_node("EnemyStateMachine").connect("attack", self, "attack")
 	get_node("EnemyStateMachine").init(states, init_state, variables)
+	get_node("EnemyStateMachine").update_variable("body", self)
