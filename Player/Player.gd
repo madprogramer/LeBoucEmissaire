@@ -61,6 +61,8 @@ const FALL_BOOST = 0.5
 var head_bodies := 0
 var toe_bodies := 0
 
+const MULT := 600.0
+
 func head_colliding() -> bool:
 	return head_bodies != 0
 
@@ -114,7 +116,7 @@ func _process(delta):
 	elif dx > 0.0:
 		change_direction("right")
 	
-	move_and_collide(Vector2(dx, dy))
+	move_and_collide(Vector2(dx * delta * MULT, dy * delta * MULT))
 
 
 func _on_Head_body_entered(body):
