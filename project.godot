@@ -54,6 +54,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://StateMachine/enemy_state_machine.gd"
 }, {
+"base": "DummyEnemy",
+"class": "PlagueDoctor",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/PlagueDoctor.gd"
+}, {
+"base": "DummyAttackState",
+"class": "PlagueDoctorAttackState",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/States/attack.gd"
+}, {
+"base": "DummyIdleState",
+"class": "PlagueDoctorIdleState",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/States/idle_state.gd"
+}, {
+"base": "DummyMoveCloserState",
+"class": "PlagueDoctorMoveCloserState",
+"language": "GDScript",
+"path": "res://Enemies/PlagueDoctor/States/move_closer.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -89,6 +109,10 @@ _global_script_class_icons={
 "Enemy1IdleState": "",
 "Enemy1MoveCloserState": "",
 "EnemyStateMachine": "",
+"PlagueDoctor": "",
+"PlagueDoctorAttackState": "",
+"PlagueDoctorIdleState": "",
+"PlagueDoctorMoveCloserState": "",
 "Player": "",
 "RandomLevelGenerator": "",
 "Roof": "",
@@ -99,13 +123,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LeBoucEmissaire"
-run/main_scene="res://Test/TestArea.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
 
 [input]
 
