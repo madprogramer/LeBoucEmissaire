@@ -1,0 +1,3 @@
+extends DummyIdleState
+
+class_name Enemy1IdleState

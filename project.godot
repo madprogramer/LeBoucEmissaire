@@ -9,6 +9,51 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "State",
+"class": "DummyAttackState",
+"language": "GDScript",
+"path": "res://StateMachine/DummyStates/attack.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "DummyEnemy",
+"language": "GDScript",
+"path": "res://Enemies/DummyEnemy.gd"
+}, {
+"base": "State",
+"class": "DummyIdleState",
+"language": "GDScript",
+"path": "res://StateMachine/DummyStates/idle_state.gd"
+}, {
+"base": "State",
+"class": "DummyMoveCloserState",
+"language": "GDScript",
+"path": "res://StateMachine/DummyStates/move_closer.gd"
+}, {
+"base": "DummyEnemy",
+"class": "Enemy1",
+"language": "GDScript",
+"path": "res://Enemies/Enemy1/Enemy1.gd"
+}, {
+"base": "DummyAttackState",
+"class": "Enemy1AttackState",
+"language": "GDScript",
+"path": "res://Enemies/Enemy1/States/attack.gd"
+}, {
+"base": "DummyIdleState",
+"class": "Enemy1IdleState",
+"language": "GDScript",
+"path": "res://Enemies/Enemy1/States/idle_state.gd"
+}, {
+"base": "DummyMoveCloserState",
+"class": "Enemy1MoveCloserState",
+"language": "GDScript",
+"path": "res://Enemies/Enemy1/States/move_closer.gd"
+}, {
+"base": "StateMachine",
+"class": "EnemyStateMachine",
+"language": "GDScript",
+"path": "res://StateMachine/enemy_state_machine.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -20,6 +65,15 @@ _global_script_classes=[ {
 "path": "res://StateMachine/state_machine.gd"
 } ]
 _global_script_class_icons={
+"DummyAttackState": "",
+"DummyEnemy": "",
+"DummyIdleState": "",
+"DummyMoveCloserState": "",
+"Enemy1": "",
+"Enemy1AttackState": "",
+"Enemy1IdleState": "",
+"Enemy1MoveCloserState": "",
+"EnemyStateMachine": "",
 "State": "",
 "StateMachine": ""
 }

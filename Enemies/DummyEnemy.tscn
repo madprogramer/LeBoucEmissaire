@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://StateMachine/DummyStates/idle_state.gd" type="Script" id=1]
+[ext_resource path="res://StateMachine/enemy_state_machine.gd" type="Script" id=2]
+[ext_resource path="res://Enemies/DummyEnemy.gd" type="Script" id=3]
+[ext_resource path="res://StateMachine/DummyStates/attack.gd" type="Script" id=4]
+[ext_resource path="res://StateMachine/DummyStates/move_closer.gd" type="Script" id=5]
+
+[node name="DummyEnemy" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="States" type="Node" parent="."]
+
+[node name="DummyAttackState" type="Node" parent="States"]
+script = ExtResource( 4 )
+
+[node name="DummyIdleState" type="Node" parent="States"]
+script = ExtResource( 1 )
+
+[node name="DummyMoveCloserState" type="Node" parent="States"]
+script = ExtResource( 5 )
+[connection signal="change_animation" from="EnemyStateMachine" to="." method="_on_EnemyStateMachine_change_animation"]
