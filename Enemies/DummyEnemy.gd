@@ -38,7 +38,7 @@ func move_closer() -> void:
 	move_and_collide(aim_vec * variables["speed"])
 
 func attack(attack_type: String) -> void:
-	print_debug(attack_type)
+	pass
 
 func _process(delta):
 	if get_node("EnemyStateMachine").is_active():
