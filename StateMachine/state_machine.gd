@@ -24,6 +24,12 @@ func update_variable(variable: String, value) -> void:
 	for state in states:
 		states[state].update_variable(variable, value)
 
+func process(delta):
+	if states[current_state] != null and states[current_state].is_active:
+		states[current_state].process(delta)
+
+var active: bool = false
+
 func init(states: Dictionary, init_state: String, variables: Dictionary) -> void:
 	self.states = states
 	self.current_state = init_state
@@ -35,3 +41,11 @@ func init(states: Dictionary, init_state: String, variables: Dictionary) -> void
 	
 	for variable in variables:
 		update_variable(variable, variables[variable])
+	
+	active = true
+
+func is_active():
+	if active and states[current_state] != null and states[current_state].is_active:
+		return true
+	
+	return false

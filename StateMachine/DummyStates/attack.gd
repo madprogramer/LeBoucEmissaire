@@ -3,6 +3,7 @@ extends State
 class_name DummyAttackState
 
 func ready() -> void:
+	.ready()
 	emit_signal("blip", {"type": "change_animation", "animation": "attacking"})
 
 func is_close_to_player() -> bool:

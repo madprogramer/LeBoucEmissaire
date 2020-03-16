@@ -3,6 +3,7 @@ extends State
 class_name DummyIdleState
 
 func start() -> void:
+	.start()
 	emit_signal("blip", {"type": "change_animation", "animation": "idle"})
 
 func can_see_player() -> bool:
