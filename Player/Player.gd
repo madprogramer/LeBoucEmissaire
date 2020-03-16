@@ -54,15 +54,15 @@ const DXLIM = 0.5
 const GRIND = 0.1
 const JUMP_LIMIT = 2.0
 const FALL_LIMIT = 1.0
-const GRAVITY = 0.05
-const JUMP_BOOST = 0.8
+const GRAVITY = 0.04
+const JUMP_BOOST = 1.2
 const FALL_BOOST = 0.8
 
 var head_bodies := 0
 var toe_bodies := 0
 
 const MULTX := 600.0
-const MULTY := 600.0
+const MULTY := 400.0
 
 func head_colliding() -> bool:
 	return head_bodies != 0
@@ -70,7 +70,7 @@ func head_colliding() -> bool:
 func toes_colliding() -> bool:
 	return toe_bodies != 0
 
-func _process(delta):
+func _physics_process(delta):	
 	var move_vec = get_move_vec()
 	if move_vec.x > 0.0:
 		dx += 0.2
@@ -109,6 +109,10 @@ func _process(delta):
 		dy += GRAVITY
 		if dy >= 0.0:
 			change_animation("falling")
+			if global_position.y > 200.0:
+				emit_signal("game_over")
+				print("Game over")
+				return
 		else:
 			change_animation("jumping")
 	
@@ -140,3 +144,13 @@ func _on_Toes_body_entered(body):
 func _on_Toes_body_exited(body):
 	if body.name != "Player":
 		toe_bodies -= 1
+
+signal game_over
+
+func _on_Area2D_body_entered(body):
+	if "PlagueDoctor" in body.name:
+		emit_signal("game_over")
+		print("game_over")
+	
+	else:
+		print(body.name)
