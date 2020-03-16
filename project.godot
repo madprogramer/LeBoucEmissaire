@@ -87,6 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LeBoucEmissaire"
+run/main_scene="res://Test/TestArea.tscn"
 config/icon="res://icon.png"
 
 [rendering]
