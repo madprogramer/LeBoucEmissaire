@@ -39,7 +39,7 @@ const FALL_BOOST = 0.8
 var head_bodies := 0
 var toe_bodies := 0
 
-const MULTX := 300.0
+const MULTX := 200.0
 const MULTY := 600.0
 
 func head_colliding() -> bool:
@@ -128,5 +128,5 @@ func _ready():
 	._ready()
 	
 	variables["speed"] = 1.0
-	get_node("EnemyStateMachine").update_variable("move_closer_range", 50.0)
+	get_node("EnemyStateMachine").update_variable("move_closer_range", 25.0)
 	get_node("EnemyStateMachine").update_variable("see_range", 300.0)
