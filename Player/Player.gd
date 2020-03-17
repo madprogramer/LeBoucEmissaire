@@ -111,7 +111,8 @@ func _physics_process(delta):
 		dy += GRAVITY
 		if dy >= 0.0:
 			change_animation("falling")
-			if global_position.y > 200.0:
+			if global_position.y > 100.0:
+			#if global_position.y > 200.0:
 				emit_signal("game_over")
 				print("Game over")
 				return
