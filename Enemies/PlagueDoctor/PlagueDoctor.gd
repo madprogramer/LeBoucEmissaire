@@ -23,6 +23,8 @@ func change_direction(new_direction: String) -> void:
 var last_delta: float = 0.016
 
 func _process(delta):
+	if global_position.y > 200.0:
+		self.queue_free();
 	last_delta = delta
 
 var dx := 0.0
@@ -104,7 +106,9 @@ func move_closer() -> void:
 			dy = -JUMP_BOOST
 	
 	else:
-		dy = 100 * FALL_BOOST
+		#dy = 100 * FALL_BOOST
+		dy = 4.0 * FALL_BOOST
+		#print(global_position.y)
 		dx = 0.0
 	
 	dy = clamp(dy, -JUMP_LIMIT, FALL_LIMIT)
