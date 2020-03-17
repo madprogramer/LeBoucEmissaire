@@ -35,6 +35,7 @@ func get_move_vec() -> Vector2:
 	if Input.is_action_pressed("move_up"):
 		move_vec.y -= 1.0
 	
+	#Unused?
 	if Input.is_action_pressed("move_down"):
 		move_vec.y += 1.0
 	
