@@ -8,8 +8,10 @@ var ispause = 1
 signal start_game
 var score_all = 0
 
-var start = -31.0
-var furthest = -31.0
+#var start = -31.0
+#var furthest = -31.0
+var start = 0
+var furthest = 0
 
 func update_score(score):
 	#if player!=null: 
@@ -17,8 +19,8 @@ func update_score(score):
 	
 	#print(get_node("..").get_node("Player").position)
 	
-	furthest = max(furthest, get_node("..").get_node("Player").position.x)
-	$ScoreLabel.text = str(floor(furthest))
+	furthest = max(furthest, get_node("..").get_node("Player").position.x-30)
+	$ScoreLabel.text = "Score: " + str(floor(furthest))
 
 func menuon():
 	score_all += time*10
