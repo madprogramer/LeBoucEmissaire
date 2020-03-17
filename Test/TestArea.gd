@@ -11,3 +11,9 @@ func game_over() -> void:
 func _ready():
 	get_node("RandomLevelGenerator").player = get_node("Player")
 	get_node("Player").connect("game_over", self, "game_over")
+
+func _process(delta):
+	#if Input.is_key_pressed(KEY_R) or Input.is_key_pressed(KEY_O):
+	if Input.is_action_just_pressed("retry"):
+		#print("heyo")
+		get_tree().reload_current_scene()
