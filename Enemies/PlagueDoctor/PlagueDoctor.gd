@@ -52,22 +52,26 @@ func head_colliding() -> bool:
 func toes_colliding() -> bool:
 	return toe_bodies != 0
 
-func _on_Head_body_entered(body):
-	if body.name != "Player":
-		head_bodies += 1
+#func _on_Head_body_entered(body):
+#	print("Head entered body")
+#	if body.name != "Player":
+#		head_bodies += 1
 
 
-func _on_Head_body_exited(body):
-	if body.name != "Player":
-		head_bodies -= 1
+#func _on_Head_body_exited(body):
+#	print("Head exited body")
+#	if body.name != "Player":
+#		head_bodies -= 1
 
 
 func _on_Toes_body_entered(body):
+	print("Toes entered body")
 	if body.name != "Player":
 		toe_bodies += 1
 
 
 func _on_Toes_body_exited(body):
+	print("Toes exited body")
 	if body.name != "Player":
 		toe_bodies -= 1
 
@@ -98,7 +102,9 @@ func move_closer() -> void:
 	
 	var is_head_colliding: bool = head_colliding()
 	var is_toes_colliding: bool = toes_colliding()
-	
+	#print("My head colliding?")
+	#print(is_head_colliding)
+	#print("Heads: "+str(head_bodies)+", Toes:"+str(toe_bodies))
 	if is_head_colliding:
 		dy = FALL_BOOST
 	
