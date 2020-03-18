@@ -65,13 +65,13 @@ func toes_colliding() -> bool:
 
 
 func _on_Toes_body_entered(body):
-	print("Toes entered body")
+	#print("Toes entered body")
 	if body.name != "Player":
 		toe_bodies += 1
 
 
 func _on_Toes_body_exited(body):
-	print("Toes exited body")
+	#print("Toes exited body")
 	if body.name != "Player":
 		toe_bodies -= 1
 

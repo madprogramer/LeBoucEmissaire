@@ -62,9 +62,21 @@ Find out what a person fears most and that is where\nhe will develop next.
 	label.text = "Game Over!                                        Click to retry\nDistance: " + str(floor(finalScore)) + "\n" + choice
 	label.rect_position = Vector2(50, 100)
 	
+	#BG
+	var BG = ColorRect.new()
+	BG.color = Color(0,0,0,1)
+	BG.rect_position = Vector2(0,0)
+	BG.rect_size = Vector2(1e4,1e4)
+		
 	for child in get_children():
 		child.queue_free()
+	#draw_rect(Rect2(64,64,64,64),Color(0,0,0,1))
+	
+	#add_child(BG)
+	add_child(BG)
 	add_child(label)
+	
+	print(BG)
 
 func _ready():
 	get_node("RandomLevelGenerator").player = get_node("Player")
