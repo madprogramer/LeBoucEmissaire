@@ -11,7 +11,8 @@ func generate_new_roof(position: Vector2) -> Roof:
 	return roof
 
 func generate_random_roof(position: Vector2) -> Roof:
-	var height = randf() * 50.0
+	var height = randf() * 50.0 + 10.0
+	#var height = 10.0
 	return generate_new_roof(Vector2(position.x, position.y + height))
 
 var last_generated = -1000.0
@@ -19,8 +20,12 @@ var last_generated = -1000.0
 func generate_random_doctor(position: Vector2) -> PlagueDoctor:
 	var doctor = preload("res://Enemies/PlagueDoctor/PlagueDoctor.tscn").instance()
 	doctor.position = position
-	doctor.position.x += randf() * 270.0
+	doctor.position.x += randf() * 225.0
 	doctor.position.y -= 27.0
+	#Spawn Velocity
+	#doctor.DXLIM = 3.0/(1.0+pow( 2.71828, -1/4*roofs)/0.2) 
+	doctor.DXLIM = 0.75 + (roofs-30.0) / (25 + abs(roofs-30.0) )
+	#print(doctor.DXLIM)
 	doctor.set_player(player)
 	return doctor
 

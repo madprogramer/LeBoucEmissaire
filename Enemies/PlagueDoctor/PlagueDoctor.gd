@@ -29,8 +29,10 @@ func _process(delta):
 
 var dx := 0.0
 var dy := 0.0
+#var vx := 0.2
+var DXLIM := 1.0
 
-const DXLIM = 0.5
+#const DXLIM = 0.5
 const GRIND = 0.01
 const JUMP_LIMIT = 2.0
 const FALL_LIMIT = 1000000.0
