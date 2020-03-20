@@ -107,6 +107,7 @@ func _physics_process(delta):
 		if move_vec.y < 0.0:
 			dy = -JUMP_BOOST
 			change_animation("jumping")
+			$JumpSound.play()
 		elif dx == 0.0:
 			change_animation("idle")
 		else:
@@ -148,6 +149,7 @@ func _on_Head_body_exited(body):
 func _on_Toes_body_entered(body):
 	if body.name != "Player":
 		toe_bodies += 1
+		$LandSound.play()
 
 
 func _on_Toes_body_exited(body):
