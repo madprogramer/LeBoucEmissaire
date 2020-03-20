@@ -25,7 +25,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.9219, 26.2581 )
+extents = Vector2( 16.9219, 21.7308 )
 
 [node name="PlagueDoctor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -43,15 +43,16 @@ script = ExtResource( 5 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "moving"
+frame = 2
 playing = true
 offset = Vector2( 170, 50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
-position = Vector2( -0.926575, -0.926582 )
+position = Vector2( -2.2176, 2.02434 )
 shape = SubResource( 2 )
 
 [node name="Head" parent="." index="4" instance=ExtResource( 12 )]
-position = Vector2( -1, -30 )
+position = Vector2( -1, -25.9238 )
 scale = Vector2( 0.3, 1 )
 
 [node name="Toes" parent="." index="5" instance=ExtResource( 13 )]

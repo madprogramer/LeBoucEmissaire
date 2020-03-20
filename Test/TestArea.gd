@@ -1,8 +1,21 @@
 extends Node2D
 
+var isGameEnding = false
 var isGameOver = false
+var gameOverTransition := 0.1
 
 func game_over() -> void:
+	
+	get_node("CanvasLayer/ColorRect/AnimationPlayer").play("fadeout")
+	isGameEnding = true
+	
+func _ready():
+	get_node("RandomLevelGenerator").player = get_node("Player")
+	get_node("Player").connect("game_over", self, "game_over")
+	randomize()
+	isGameOver = false
+
+func endGame():
 	isGameOver = true
 	var ourFont = DynamicFont.new()
 	ourFont.font_data = load("res://CloisterBlack.ttf")
@@ -14,6 +27,7 @@ func game_over() -> void:
 	var label = Label.new()
 	label.add_font_override("font", ourFont)
 	#label.add_color_override("font_color", Color.white)
+	
 	
 	var finalScore = get_node("CanvasLayer").furthest
 	
@@ -79,16 +93,16 @@ Find out what a person fears most and that is where\nhe will develop next.
 	
 	print(BG)
 
-func _ready():
-	get_node("RandomLevelGenerator").player = get_node("Player")
-	get_node("Player").connect("game_over", self, "game_over")
-	randomize()
-	isGameOver = false
-
 func _process(delta):
-	#if Input.is_key_pressed(KEY_R) or Input.is_key_pressed(KEY_O):
-	if Input.is_action_just_pressed("retry"):
-		#print("heyo")
-		get_tree().reload_current_scene()
-	elif isGameOver and Input.is_action_just_pressed("conditional_retry"):
-		get_tree().reload_current_scene()
+	
+	if isGameEnding and gameOverTransition > 0 :
+		gameOverTransition -= delta
+	elif isGameEnding and ! isGameOver:
+		endGame()
+	else:
+		#if Input.is_key_pressed(KEY_R) or Input.is_key_pressed(KEY_O):
+		if Input.is_action_just_pressed("retry"):
+			#print("heyo")
+			get_tree().reload_current_scene()
+		elif isGameOver and Input.is_action_just_pressed("conditional_retry"):
+			get_tree().reload_current_scene()
