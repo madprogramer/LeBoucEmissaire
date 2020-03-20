@@ -76,6 +76,7 @@ func toes_colliding() -> bool:
 signal game_over
 
 func _physics_process(delta):	
+	print($CollisionShape2D.position)
 	var move_vec = get_move_vec()
 	if move_vec.x > 0.0:
 		dx += 0.2
@@ -101,13 +102,18 @@ func _physics_process(delta):
 	if is_head_colliding:
 		dy = FALL_BOOST
 		change_animation("falling")
-	
+		$CollisionShape2D.position = Vector2(0,3)
+		$Area2D/CollisionShape2D.position = Vector2(-0.383,1.117)
+		$Toes.position = Vector2(0,120)
 	elif is_toes_colliding:
 		dy = 0.0
 		if move_vec.y < 0.0:
 			dy = -JUMP_BOOST
 			change_animation("jumping")
 			$JumpSound.play()
+			$CollisionShape2D.position = Vector2(0,-57)
+			$Area2D/CollisionShape2D.position = Vector2(-0.383,1.117-60)
+			$Toes.position = Vector2(0,60)
 		elif dx == 0.0:
 			change_animation("idle")
 		else:
@@ -118,6 +124,9 @@ func _physics_process(delta):
 		dy += GRAVITY
 		if dy >= 0.0:
 			change_animation("falling")
+			$CollisionShape2D.position = Vector2(0,3)
+			$Area2D/CollisionShape2D.position = Vector2(-0.383,1.117)
+			$Toes.position = Vector2(0,120)
 			if global_position.y > 100.0:
 			#if global_position.y > 200.0:
 				get_owner().get_node("FallingDeathSound").play()
