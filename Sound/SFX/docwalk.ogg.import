@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/docwalk.ogg-008cdb3e637e9ae911b8061c9f9f601d.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/docwalk.ogg"
+dest_files=[ "res://.import/docwalk.ogg-008cdb3e637e9ae911b8061c9f9f601d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

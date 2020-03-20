@@ -43,6 +43,8 @@ const FALL_BOOST = 0.8
 var head_bodies := 0
 var toe_bodies := 0
 
+var landed_once := false
+
 const MULTX := 200.0
 const MULTY := 600.0
 
@@ -68,12 +70,19 @@ func _on_Toes_body_entered(body):
 	#print("Toes entered body")
 	if body.name != "Player":
 		toe_bodies += 1
+		if landed_once:
+			$Landing.play()
+		else:
+			change_direction("left")
+		landed_once = true
+		$Walking.play()
 
 
 func _on_Toes_body_exited(body):
 	#print("Toes exited body")
 	if body.name != "Player":
 		toe_bodies -= 1
+		$Walking.stop()
 
 func move_closer() -> void:
 	if variables.has("player") == false:
