@@ -38,9 +38,11 @@ func get_move_vec() -> Vector2:
 	#Unused?
 	if Input.is_action_pressed("move_down"):
 		move_vec.y += 1.0
+		
 	
 	if Input.is_action_pressed("move_left"):
 		move_vec.x -= 1.0
+		
 	
 	if Input.is_action_pressed("move_right"):
 		move_vec.x += 1.0
@@ -94,6 +96,8 @@ func _physics_process(delta):
 	
 #	print(is_head_colliding, " ", is_toes_colliding)
 	
+	#Silence steps
+	$PlayerSound.set_stream_paused(true)
 	if is_head_colliding:
 		dy = FALL_BOOST
 		change_animation("falling")
@@ -107,6 +111,7 @@ func _physics_process(delta):
 			change_animation("idle")
 		else:
 			change_animation("moving")
+			$PlayerSound.set_stream_paused(false)
 	
 	else:
 		dy += GRAVITY

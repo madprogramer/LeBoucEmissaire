@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/armorwalk.wav-7c5c9dd65c4cafb6fc55cf3cd54d2232.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/armorwalk.wav"
+dest_files=[ "res://.import/armorwalk.wav-7c5c9dd65c4cafb6fc55cf3cd54d2232.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

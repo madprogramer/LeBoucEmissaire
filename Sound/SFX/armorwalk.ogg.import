@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/armorwalk.ogg-e92d016aa91f5ec34da0c7f05a91429f.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/armorwalk.ogg"
+dest_files=[ "res://.import/armorwalk.ogg-e92d016aa91f5ec34da0c7f05a91429f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

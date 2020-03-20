@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/betterarmorwalk.ogg-be641b0407b725ff3d15daae0dbe6cff.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/betterarmorwalk.ogg"
+dest_files=[ "res://.import/betterarmorwalk.ogg-be641b0407b725ff3d15daae0dbe6cff.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
