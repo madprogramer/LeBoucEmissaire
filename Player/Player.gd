@@ -120,6 +120,7 @@ func _physics_process(delta):
 			change_animation("falling")
 			if global_position.y > 100.0:
 			#if global_position.y > 200.0:
+				get_owner().get_node("FallingDeathSound").play()
 				emit_signal("game_over")
 				print("Game over")
 				return
@@ -159,6 +160,7 @@ func _on_Toes_body_exited(body):
 
 func _on_Area2D_body_entered(body):
 	if "PlagueDoctor" in body.name:
+		get_owner().get_node("EnemyHittingSound").play()
 		emit_signal("game_over")
 		print("game_over")
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Test/TestArea.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Sound/Music/theme-slow.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Sound/SFX/land.wav" type="AudioStream" id=9]
 [ext_resource path="res://Sound/SFX/jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sound/SFX/enemyhit.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/SFX/fall.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -29,14 +31,19 @@ zoom = Vector2( 0.75, 0.75 )
 
 [node name="PlayerSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 3 )
+volume_db = -15.0
+pitch_scale = 0.71
 autoplay = true
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 10 )
-volume_db = -10.0
+volume_db = -30.0
+pitch_scale = 0.73
 
 [node name="LandSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 9 )
+volume_db = -13.0
+pitch_scale = 0.78
 
 [node name="RandomLevelGenerator" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -53,5 +60,13 @@ custom_fonts/normal_font = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -4.0
 autoplay = true
+
+[node name="EnemyHittingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+pitch_scale = 0.77
+
+[node name="FallingDeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -10.0
+pitch_scale = 0.6

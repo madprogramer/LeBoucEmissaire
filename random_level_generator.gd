@@ -11,7 +11,7 @@ func generate_new_roof(position: Vector2) -> Roof:
 	return roof
 
 func generate_random_roof(position: Vector2) -> Roof:
-	var height = randf() * 50.0 + 10.0
+	var height =  randf() * 50.0 + 60.0
 	#var height = 10.0
 	return generate_new_roof(Vector2(position.x, position.y + height))
 

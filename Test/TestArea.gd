@@ -69,7 +69,8 @@ Find out what a person fears most and that is where\nhe will develop next.
 	BG.rect_size = Vector2(1e4,1e4)
 		
 	for child in get_children():
-		child.queue_free()
+		if child.get_name() != "EnemyHittingSound" and child.get_name() != "FallingDeathSound":
+			child.queue_free()
 	#draw_rect(Rect2(64,64,64,64),Color(0,0,0,1))
 	
 	#add_child(BG)
